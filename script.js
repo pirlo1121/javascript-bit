@@ -1,21 +1,74 @@
-let notasMatematicas = [ 2,3,2,1,2 ];
-let notasIngles = [ 5,4,4,4.8,2 ];
-let notasSociales = [ 1,1,1,1,2 ];
+let datos = [
+    {
+        nombre: 'teclado',
+        precio: 300
+    },
+    {
+        nombre: 'mouse',
+        precio: 10
+    },
+    {
+        nombre: 'monitor',
+        precio: 500
+    },
+    {
+        nombre: 'cpu',
+        precio: 1000
+    },
+];
+
+let datos1 = [
+    {
+        nombre: 'teclado',
+        precio: 300
+    },
+    {
+        nombre: 'mouse',
+        precio: 10
+    },
+    {
+        nombre: 'monitor',
+        precio: 5000
+    },
+    {
+        nombre: 'cpu',
+        precio: 1000
+    },
+];
+let datos2 = [
+    {
+        nombre: 'teclado',
+        precio: 300
+    },
+    {
+        nombre: 'mouse',
+        precio: 1200
+    },
+    {
+        nombre: 'monitor',
+        precio: 500
+    },
+    {
+        nombre: 'cpu',
+        precio: 1000
+    },
+];
+obtenerPrecioMayor(datos);
+obtenerPrecioMayor(datos1);
+obtenerPrecioMayor(datos2)
 
 
+function obtenerPrecioMayor(datos){
 
+    let precioMayor = 0;
+    let productoMayor = ''
 
-function obtenerPromedio(notas){
-
-    let sumaNotas = 0
-    for(let i = 0 ; i< notas.length ; i++){
-        sumaNotas += notas[i];
+    for(let i = 0; i<datos.length ; i++){
+        if(datos[i].precio > precioMayor){
+            precioMayor = datos[i].precio;
+            productoMayor = datos[i].nombre
+        }
     }
-    let promedio = (sumaNotas / notas.length).toFixed(1);
-    console.log(`La nota final es: ${promedio}`);
+    console.log(`El producto más costoso es: ${productoMayor}
+        con un precio de: ${precioMayor}$`);
 }
-
-obtenerPromedio(notasMatematicas);
-obtenerPromedio(notasIngles);
-obtenerPromedio(notasSociales);
-obtenerPromedio([2,4,4,4]);
