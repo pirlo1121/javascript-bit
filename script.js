@@ -1,17 +1,21 @@
-for (let i = 1; i <= 50; i++) {
+let notasMatematicas = [ 2,3,2,1,2 ];
+let notasIngles = [ 5,4,4,4.8,2 ];
+let notasSociales = [ 1,1,1,1,2 ];
 
-    if(i % 3 === 0 && i % 5 ===0){
-        console.log(`${i} = fizzbozz`)
-    } else if(i % 3 === 0 ){
-        console.log(`${i} = fizz`)
-    } else if(i % 5 === 0){
-        console.log(`${i} = bozz`)
+
+
+
+function obtenerPromedio(notas){
+
+    let sumaNotas = 0
+    for(let i = 0 ; i< notas.length ; i++){
+        sumaNotas += notas[i];
     }
-    
+    let promedio = (sumaNotas / notas.length).toFixed(1);
+    console.log(`La nota final es: ${promedio}`);
 }
 
-
-
-// 3, NO 5 => FIZZ
-// 5, no 3 => BOZZ
-// 3 , 5 => FIZZBOZZ
+obtenerPromedio(notasMatematicas);
+obtenerPromedio(notasIngles);
+obtenerPromedio(notasSociales);
+obtenerPromedio([2,4,4,4]);
